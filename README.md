@@ -61,7 +61,7 @@ cd nasa-apod-explorer
 * Replace it in your project:
 
 ```js
-const API_KEY = "YOUR_API_KEY_HERE";
+const API_KEY = hpaIT9IXaxwQfAKzsvUdkgHOYWB1kZVn9vBYhXcZ;
 ```
 
 ---
@@ -140,11 +140,5 @@ This project is licensed under the **MIT License**.
 
 ---
 
-If you want, I can also:
 
-* Add **badges (GitHub stars, license, etc.)**
-* Customize it for **React / Next.js specifically**
-* Write a **killer portfolio description** for you
-
-Just tell me 👍
 
