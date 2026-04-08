@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA APOD Explorer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="starfield"></div>
+    <main class="app-container">
+        <header class="app-header">
+            <h1 class="neon-text">APOD Explorer</h1>
+            <p class="subtitle">Astronomy Picture of the Day</p>
+        </header>
+
+        <section class="controls glass-panel">
+            <div class="control-group nav-group">
+                <button id="prev-btn" class="glass-btn nav-btn" title="Previous Day">&larr;</button>
+                <div class="date-picker-group">
+                    <label for="date-picker">Select Date</label>
+                    <input type="date" id="date-picker" class="glass-input">
+                </div>
+                <button id="next-btn" class="glass-btn nav-btn" title="Next Day">&rarr;</button>
+            </div>
+            <div class="control-group">
+                <label for="bday-picker">Birthday Explorer</label>
+                <input type="date" id="bday-picker" class="glass-input">
+            </div>
+            <div class="control-group">
+                <button id="random-btn" class="glass-btn action-btn">Surprise Me</button>
+            </div>
+            <div class="control-group toggle-group">
+                <label for="hd-toggle" class="toggle-label">HD Image</label>
+                <label class="switch">
+                    <input type="checkbox" id="hd-toggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </section>
+
+        <div id="loading-ui" class="state-container hidden glass-panel">
+            <div class="spinner"></div>
+            <p>Initiating Deep Space Link...</p>
+        </div>
+
+        <div id="error-ui" class="state-container hidden glass-panel">
+            <div class="error-icon">⚠</div>
+            <h2>Connection Lost</h2>
+            <p>Unable to retrieve data. The signal might be lost in the void.</p>
+        </div>
+
+        <article id="content-container" class="content hidden">
+            <div class="media-wrapper glass-panel" id="media-container"></div>
+            <div class="info-wrapper glass-panel">
+                <div class="title-header">
+                    <h2 id="apod-title"></h2>
+                    <button id="favorite-btn" class="glass-btn fav-btn" aria-label="Add to Favorites">☆</button>
+                </div>
+                <div class="metadata">
+                    <span id="apod-date" class="badge"></span>
+                    <span id="apod-copyright" class="badge"></span>
+                </div>
+                <p id="apod-explanation"></p>
+            </div>
+        </article>
+
+        <section id="favorites-section" class="favorites-wrapper glass-panel hidden">
+            <h3>Saved Explorations</h3>
+            <div id="favorites-list" class="favorites-list"></div>
+        </section>
+    </main>
+
+    <div id="image-modal" class="modal">
+        <button id="close-modal" class="close-btn">&times;</button>
+        <img id="modal-image" src="" alt="Full Screen APOD">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public API Playground</title>
+    <meta name="description" content="Explore fun and useful public APIs completely free. Featuring Dog Generator, Joke Generator, User Data and JSONPlaceholder.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Include Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Include FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background elements for glassmorphism effect -->
+    <div class="blob-1"></div>
+    <div class="blob-2"></div>
+
+    <main class="container">
+        <header>
+            <h1>Public API Playground</h1>
+            <p>Explore random data fetched from popular free public APIs</p>
+        </header>
+
+        <div class="grid">
+            <!-- Card 1: Dog Finder -->
+            <section class="card" id="dog-card">
+                <div class="card-header">
+                    <i class="fa-solid fa-dog icon"></i>
+                    <h2>Dog Finder</h2>
+                </div>
+                <div class="card-content">
+                    <div class="image-container" id="dog-image-container">
+                        <img id="dog-image" src="" alt="Random Dog" class="hidden">
+                        <div class="placeholder-text" id="dog-placeholder">Awaiting fetch...</div>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Breed:</span>
+                        <span class="value" id="dog-breed">Unknown</span>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <button id="btn-get-dog" class="btn primary">Get Dog</button>
+                    <button id="btn-copy-dog" class="btn secondary" disabled>Copy URL</button>
+                </div>
+            </section>
+
+            <!-- Card 2: Joke Generator -->
+            <section class="card" id="joke-card">
+                <div class="card-header">
+                    <i class="fa-solid fa-face-laugh-squint icon"></i>
+                    <h2>Joke Generator</h2>
+                </div>
+                <div class="card-content joke-content">
+                    <p class="joke-setup" id="joke-setup">Ready for a joke?</p>
+                    <p class="joke-punchline" id="joke-punchline">Fetch one!</p>
+                </div>
+                <div class="card-actions full-width">
+                    <button id="btn-get-joke" class="btn primary">Next Joke</button>
+                </div>
+            </section>
+
+            <!-- Card 3: Random User Profile -->
+            <section class="card" id="user-card">
+                <div class="card-header">
+                    <i class="fa-solid fa-user-astronaut icon"></i>
+                    <h2>Random User Profile</h2>
+                </div>
+                <div class="card-content user-profile">
+                    <img id="user-image" src="https://via.placeholder.com/100" alt="Profile" class="avatar hidden">
+                    <div class="user-details" id="user-details">
+                        <p class="placeholder-text">Awaiting fetch...</p>
+                    </div>
+                </div>
+                <div class="card-actions full-width">
+                    <button id="btn-get-user" class="btn primary">Get User</button>
+                </div>
+            </section>
+
+            <!-- Card 4: JSONPlaceholder Explorer -->
+            <section class="card" id="json-card">
+                <div class="card-header">
+                    <i class="fa-solid fa-code icon"></i>
+                    <h2>JSON Data Explorer</h2>
+                </div>
+                <div class="card-content json-explorer">
+                    <div class="filter-buttons">
+                        <button class="btn fn-btn" data-type="posts">Posts</button>
+                        <button class="btn fn-btn" data-type="comments">Comments</button>
+                        <button class="btn fn-btn" data-type="albums">Albums</button>
+                        <button class="btn fn-btn" data-type="photos">Photos</button>
+                    </div>
+                    <div class="code-block-container">
+                        <pre><code id="json-output">Select a data type...</code></pre>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">Action successful!</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
